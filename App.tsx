@@ -1,5 +1,6 @@
-import { ScreenContent } from 'components/ScreenContent';
+import { ScreenContent } from '~/shared/components/ScreenContent';
 import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
 
 import './global.css';
 
