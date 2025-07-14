@@ -3,34 +3,48 @@ import { useFonts } from 'expo-font';
 import clsx from 'clsx';
 import { ActivityIndicator } from 'react-native';
 
-type Variant = 'title' | 'subtitle' | 'paragraph' | 'small';
-// type Weight = 'thin' | 'light' | 'regular' | 'medium' | 'bold';
+type Variant =
+  | 'textTitleCredentials'
+  | 'textSubtitleCredentials'
+  | 'title'
+  | 'subtitle'
+  | 'paragraph'
+  | 'textButton'
+  | 'textInput'
+  | 'textSmall'
+  | 'textLPTTitle'
+  | 'textLPTiSubTitle'
+  | 'textCategory'
+  | 'textCard'
+  | 'textNavigateByCategory';
 
 interface Props extends RNTextProps {
   variant?: Variant;
   className?: string;
+  color?: string; 
   children: React.ReactNode;
 }
 
 const variantMap: Record<Variant, string> = {
-  title: 'text-3xl font-causten-thin',
-  subtitle: 'text-xl',
-  paragraph: 'text-base',
-  small: 'text-sm',
+  textLPTTitle: 'text-2xl font-causten-bold',
+  textLPTiSubTitle: 'text-base font-causten-bold',
+  textTitleCredentials: 'text-2xl font-causten-medium',
+  textSubtitleCredentials: 'text-base font-causten-medium',
+  title: 'text-2xl font-causten-light',
+  subtitle: 'text-xs font-causten-light',
+  paragraph: 'text-xl font-causten-light',
+  textCategory: 'text-xl font-causten-light',
+  textCard: 'text-sm font-causten-light',
+  textSmall: 'text-sm font-causten-regular',
+  textButton: 'text-lg font-causten-bold',
+  textInput: 'text-base font-causten-medium',
+  textNavigateByCategory: 'text-sm font-causten-bold',
 };
-
-// const weightMap: Record<Weight, string> = {
-//   thin: 'font-causten-thin',
-//   light: 'font-causten-light',
-//   regular: 'font-causten-regular',
-//   medium: 'font-causten-medium',
-//   bold: 'font-causten-bold',
-// };
 
 export function Text({
   variant = 'paragraph',
-  // weight = 'regular',
   className,
+  color,
   children,
   ...rest
 }: Props) {
@@ -49,6 +63,7 @@ export function Text({
   return (
     <RNText
       className={clsx(variantMap[variant], className)}
+      style={[{ color }, rest.style]} 
       {...rest}
     >
       {children}
