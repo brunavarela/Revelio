@@ -16,7 +16,8 @@ type Variant =
   | 'textLPTiSubTitle'
   | 'textCategory'
   | 'textCard'
-  | 'textNavigateByCategory';
+  | 'textNavigateByCategory'
+  | 'textSplashScreen'
 
 interface Props extends RNTextProps {
   variant?: Variant;
@@ -39,6 +40,7 @@ const variantMap: Record<Variant, string> = {
   textButton: 'text-lg font-causten-bold',
   textInput: 'text-base font-causten-medium',
   textNavigateByCategory: 'text-sm font-causten-bold',
+  textSplashScreen: 'text-2xl font-causten-regular',
 };
 
 export function Text({
