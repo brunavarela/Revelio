@@ -1,13 +1,12 @@
-import { ScreenContent } from '~/shared/components/ScreenContent';
 import { StatusBar } from 'expo-status-bar';
-import { useFonts } from 'expo-font';
+import Navigation from './src/Navigation'; // ou onde estiver seu Navigation.tsx
 
 import './global.css';
 
 export default function App() {
   return (
     <>
-      <ScreenContent></ScreenContent>
+      <Navigation />
       <StatusBar style="auto" />
     </>
   );
