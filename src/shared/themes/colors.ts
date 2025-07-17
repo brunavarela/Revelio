@@ -21,4 +21,3 @@ export const hoverTheme = {
   blueHover: '#99C0F9',
   yellowHover: '#C5A766', 
 };
-

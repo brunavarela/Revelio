@@ -13,7 +13,7 @@ type Variant =
   | 'textInput'
   | 'textSmall'
   | 'textLPTTitle'
-  | 'textLPTiSubTitle'
+  | 'textLPTSubTitle'
   | 'textCategory'
   | 'textCard'
   | 'textNavigateByCategory'
@@ -28,7 +28,7 @@ interface Props extends RNTextProps {
 
 const variantMap: Record<Variant, string> = {
   textLPTTitle: 'text-2xl font-causten-bold',
-  textLPTiSubTitle: 'text-base font-causten-bold',
+  textLPTSubTitle: 'text-base font-causten-bold',
   textTitleCredentials: 'text-2xl font-causten-medium',
   textSubtitleCredentials: 'text-base font-causten-medium',
   title: 'text-2xl font-causten-light',
@@ -37,7 +37,7 @@ const variantMap: Record<Variant, string> = {
   textCategory: 'text-xl font-causten-light',
   textCard: 'text-sm font-causten-light',
   textSmall: 'text-sm font-causten-regular',
-  textButton: 'text-lg font-causten-bold',
+  textButton: 'text-xl font-causten-bold',
   textInput: 'text-base font-causten-medium',
   textNavigateByCategory: 'text-sm font-causten-bold',
   textSplashScreen: 'text-2xl font-causten-regular',
