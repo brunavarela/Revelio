@@ -1,28 +1,27 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Text } from '~/shared/components/text';
 import { useAuth } from '~/shared/context/AuthContext';
 import { mainTheme } from '~/shared/themes/colors';
+import { ScreenBackground } from '~/shared/components/ScreenBackground';
 
 export function Home() {
   const { user } = useAuth();
 
   return (
-    <View style={styles.container}>
+    <ScreenBackground style={styles.container}>
       <Text variant="textLPTTitle" color={mainTheme.secondary}>
         Olá, {user?.nickname}!
       </Text>
       <Text variant="textLPTSubTitle" color={mainTheme.quinary}>
         Feed em construção...
       </Text>
-    </View>
+    </ScreenBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: mainTheme.primary,
     padding: 24,
     justifyContent: 'center',
     alignItems: 'center',
